@@ -3,7 +3,7 @@ import styles from "../Pagination.module.scss";
 
 type Props = {
   active?: boolean;
-  onChange: (event: TButtonEvent, value: number) => void;
+  onChange: (event: Pagination.TButtonEvent, value: number) => void;
   disabled?: boolean;
   to?: number;
   children: JSXElement;
@@ -19,7 +19,7 @@ export function Button(props: Props) {
     throw new Error("to is not a number");
   }
 
-  const handleChange = (e: TButtonEvent) => {
+  const handleChange = (e: Pagination.TButtonEvent) => {
     merged.onChange(e, merged.to as number);
   };
 

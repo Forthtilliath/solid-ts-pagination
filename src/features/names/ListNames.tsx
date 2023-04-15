@@ -3,7 +3,7 @@ import { generatorFullNames } from "./lib/faker";
 import styles from "./Names.module.scss";
 
 type Props = {
-  // names: ReturnType<typeof generatorFullNames>;
+  /** Tableau de noms */
   names: Accessor<ReturnType<typeof generatorFullNames>>;
 };
 

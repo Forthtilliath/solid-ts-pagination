@@ -11,6 +11,7 @@ import { ListNames } from "./features/names/ListNames";
 const App: Component = () => {
   const [page, setPage] = createSignal(1);
   const [search, setSearch] = createSignal("");
+
   const [names, count] = createNames({
     nbNames: 95,
     page: page,
@@ -18,7 +19,7 @@ const App: Component = () => {
     filter: search,
   });
 
-  const handleChange = (_event: TButtonEvent, value: number) => {
+  const handleChange = (_event: Pagination.TButtonEvent, value: number) => {
     setPage(Math.max(1, Math.min(value, count())));
   };
 

@@ -18,7 +18,7 @@ type Props = {
   /** Nombre de pages à coté de la première et dernière page */
   boundaryCount?: number;
   /** Action quand on clique sur une page */
-  onChange: (event: TButtonEvent, value: number) => void;
+  onChange: (event: Pagination.TButtonEvent, value: number) => void;
 };
 
 // https://codesandbox.io/s/sleepy-perlman-zqt4xb?file=/demo.tsx
@@ -30,8 +30,7 @@ export function Pagination(props: Props) {
     equals: false,
   });
 
-  createEffect(() => console.log(merged.page()));
-
+  // Met à jour la pagination au changement soit de la page, soit du nombre de pages
   createEffect(on(merged.page, () => setPagination(createPagination())));
   createEffect(on(merged.count, () => setPagination(createPagination())));
 
@@ -51,7 +50,6 @@ export function Pagination(props: Props) {
     /** start/end */ merged.boundaryCount * 2;
 
   const createPagination = () => {
-    console.log("createPagination");
     let pagi = [] as number[];
     // let [pagi, setPagi] = createSignal([] as number[], { equals: false });
     /**
@@ -129,7 +127,10 @@ export function Pagination(props: Props) {
         siblingPages.push(merged.page());
         siblingPages = [
           ...siblingPages,
-          ...allPages().slice(merged.page(), merged.page() + merged.siblingCount),
+          ...allPages().slice(
+            merged.page(),
+            merged.page() + merged.siblingCount
+          ),
         ];
         pagi.push(-1);
       }
@@ -144,7 +145,6 @@ export function Pagination(props: Props) {
       pagi.push(...boundaryEnd);
     }
 
-    console.log(pagi);
     return Array.from(new Set(pagi));
   };
 

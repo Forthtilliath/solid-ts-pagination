@@ -6,7 +6,7 @@ type Props = {
 };
 
 export function SearchBar({ search, setSearch }: Props) {
-  const handleSearch = (e: TInputEvent) => {
+  const handleSearch = (e: Names.TInputEvent) => {
     setSearch(e.currentTarget.value);
   };
 

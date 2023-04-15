@@ -1,8 +1,10 @@
 declare global {
-  type TInputEvent = Event & {
-    currentTarget: HTMLInputElement;
-    target: Element;
-  };
+  namespace Names {
+    type TInputEvent = Event & {
+      currentTarget: HTMLInputElement;
+      target: Element;
+    };
+  }
 }
 
 export {};
