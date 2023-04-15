@@ -7,6 +7,7 @@ type Props = {
   disabled?: boolean;
   to?: number;
   children: JSXElement;
+  label?: string;
 };
 
 export function Button(props: Props) {
@@ -30,6 +31,7 @@ export function Button(props: Props) {
       class={styles.button}
       classList={{ [styles.active]: merged.active }}
       disabled={merged.disabled}
+      aria-label={merged.label}
     >
       {merged.children}
     </button>

@@ -155,6 +155,7 @@ export function Pagination(props: Props) {
         onChange={merged.onChange}
         to={merged.page() - 1}
         disabled={merged.page() === 1}
+        label="Previous"
       >
         <RiSystemArrowDropLeftLine class={styles.icon} />
       </Button>
@@ -175,6 +176,7 @@ export function Pagination(props: Props) {
         onChange={merged.onChange}
         to={merged.page() + 1}
         disabled={merged.page() === merged.count()}
+        label="Next"
       >
         <RiSystemArrowDropRightLine class={styles.icon} />
       </Button>

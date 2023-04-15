@@ -6,8 +6,6 @@ import { createNames } from "./features/names/createNames";
 import { SearchBar } from "./features/search/SearchBar";
 import { ListNames } from "./features/names/ListNames";
 
-// const count = 10;
-
 const App: Component = () => {
   const [page, setPage] = createSignal(1);
   const [search, setSearch] = createSignal("");
