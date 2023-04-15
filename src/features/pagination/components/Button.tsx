@@ -1,5 +1,5 @@
 import { JSXElement, mergeProps } from "solid-js";
-import styles from "../Pagination.module.css";
+import styles from "../Pagination.module.scss";
 
 type Props = {
   active?: boolean;
