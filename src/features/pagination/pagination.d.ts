@@ -1,6 +1,6 @@
 declare global {
-    type ActionEvent<T> = MouseEvent & {
-        currentTarget: T;
+    type TButtonEvent = MouseEvent & {
+        currentTarget: HTMLButtonElement;
         target: Element;
     }
 }

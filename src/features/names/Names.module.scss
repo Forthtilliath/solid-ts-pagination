@@ -1,0 +1,8 @@
+.list {
+  margin-top: 1rem;
+  min-height: 400px;
+
+  div + div {
+    margin-top: 1rem;
+  }
+}
