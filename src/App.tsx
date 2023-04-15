@@ -1,4 +1,4 @@
-import { Component, createEffect, createSignal } from "solid-js";
+import { Component, createEffect, createSignal, on } from "solid-js";
 
 import styles from "./App.module.css";
 import { Pagination } from "./features/pagination";
@@ -23,7 +23,7 @@ const App: Component = () => {
     setPage(Math.max(1, Math.min(value, count())));
   };
 
-  createEffect(() => setPage(1));
+  createEffect(on(search, () => setPage(1)));
 
   return (
     <div class={styles.App}>
